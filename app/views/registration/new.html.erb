@@ -1,0 +1,21 @@
+<div class="w-50 mx-auto my-5 ">
+    <h1 class="text-center">Sign Up</h1>
+    <%= form_with model: @user, class: "form mt-5", local: true do |f| %>
+        <div class="mb-3">
+            <%= f.label :email %><br>
+            <%= f.email_field :email, placeholder: "Enter email address", class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :password %><br>
+            <%= f.password_field :password, class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :password_confirmation %><br>
+            <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+        </div>
+        
+        <%= f.submit class: "btn btn-success" %>
+    <% end %>
+</div>
