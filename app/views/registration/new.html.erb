@@ -22,6 +22,8 @@
             <%= f.label :password_confirmation %><br>
             <%= f.password_field :password_confirmation, class: "form-control", required: true %>
         </div>
+
+        <div class="mb-4">Already have an account? <%= link_to "Sign In", login_path,  class: "a" %></div>
         
         <%= f.submit class: "btn btn-success" %>
     <% end %>

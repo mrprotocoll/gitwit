@@ -1,0 +1,19 @@
+<div class="w-50 mx-auto my-5 ">
+    <h1 class="text-center">Sign In</h1>
+
+    <%= form_with url: login_path, data:{ turbo: false }, class: "form mt-5", local: true do |f| %>
+        <div class="mb-3">
+            <%= f.label :email %><br>
+            <%= f.email_field :email, placeholder: "Enter email address", class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :password %><br>
+            <%= f.password_field :password, class: "form-control", required: true %>
+        </div>
+        
+        <div class="mb-4">Don't have an account? <%= link_to "Sign up", sign_up_path,  class: "a" %></div>
+
+        <%= f.submit "Sign In", class: "btn btn-success" %>
+    <% end %>
+</div>
