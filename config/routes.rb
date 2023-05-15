@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   get "/sign-up", to: "registration#new"
   post "/sign-up", to: "registration#create"
+
   get "/login", to: "session#new"
   post "/login", to: "session#create"
   delete "/logout", to: "session#destroy"
 
   resources :users
+  get "/profile", to: "users#index"
 
   # Defines the root path route ("/")
   root "main#index"
