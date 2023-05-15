@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :users
   get "/profile", to: "users#index"
 
+  get "/password", to: "password#edit"
+  patch "/password", to: "password#update"
+
   # Defines the root path route ("/")
   root "main#index"
 end
