@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
 
     Current.user = User.find_by(id: session[:user_id])
   end
+
+  def user_is_logged_in?
+    Current.user.nil?
+  end
+
+  def require_login!
+    redirect_to login_path, alert: 'Authentication Required' if user_is_logged_in?
+  end
 end
