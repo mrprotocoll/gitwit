@@ -1,0 +1,7 @@
+<h1><%= @greetings %></h1>
+
+<p>
+  use the link bekow to reset your passeord. Link expires in 15 minutes
+</p>
+
+<%= link_to "Reset Password", password_reset_edit_url(token: @token) %>

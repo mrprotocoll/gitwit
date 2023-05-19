@@ -12,7 +12,10 @@
             <%= f.password_field :password, class: "form-control", required: true %>
         </div>
         
-        <div class="mb-4">Don't have an account? <%= link_to "Sign up", sign_up_path,  class: "a" %></div>
+        <div class="mb-4 d-flex justify-content-between">
+            <p> Don't have an account? <%= link_to "Sign up", sign_up_path,  class: "a" %> </p>
+            <p><%= link_to "Forgot password?", password_reset_path %> </p>
+        </div>
 
         <%= f.submit "Sign In", class: "btn btn-success" %>
     <% end %>
