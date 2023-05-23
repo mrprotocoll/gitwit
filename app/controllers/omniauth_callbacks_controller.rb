@@ -1,5 +1,5 @@
-class OmniauthCallbacksController < ApplicationController 
-    def twitter
-        render plain: "Success!"
-    end
+class OmniauthCallbacksController < ApplicationController
+  def twitter
+    render plain: 'Success!'
+  end
 end
