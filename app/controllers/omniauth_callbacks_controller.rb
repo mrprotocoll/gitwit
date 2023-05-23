@@ -13,7 +13,7 @@ class OmniauthCallbacksController < ApplicationController
         
     end
 
-    redirect_to root_path, notice: "Twitter account successfully connected"
+    redirect_to twitter_accounts_path, notice: "Twitter account successfully connected"
   end
 
   def auth

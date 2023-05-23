@@ -12,10 +12,18 @@
   </head>
 
   <body>
-    <%= render partial: "shared/navbar" %>
-    <div class="container">
-      <%= render partial: "shared/flash" %>
-      <%= yield %>
+    <div class="main">
+        <div class="gradient"></div>
+    </div>
+    
+    <div class="app">
+      <%= render partial: "shared/navbar" %>
+      <main>
+        <div class="container">
+          <%= render partial: "shared/flash" %>
+          <%= yield %>
+        </div>
+      </main>
     </div>
   </body>
 </html>
