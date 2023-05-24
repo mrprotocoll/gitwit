@@ -17,7 +17,8 @@
                 <p>Scheduled for: <%= l tweet.published_at, format: :short %></p>
                 <div>
                 <%= link_to "Edit", edit_tweet_path(tweet.id), class: "btn  btn-sm btn-outline-primary btn-gradient" %>
-                <%= link_to "Delete", tweet , method: :delete, class: "btn  btn-sm btn-outline-danger btn-gradient" %>
+                <%= link_to "Delete", tweet ,  class: "btn  btn-sm btn-outline-danger btn-gradient", data: { turbo_method: :delete,
+                turbo_confirm: "Are you sure you want to delete this scheduled tweet?" } %>
                 </div>
             <% end %>
             

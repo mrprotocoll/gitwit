@@ -24,6 +24,19 @@ class TweetsController < ApplicationController
     end
 
     def update
+        if @tweet.update(tweet_params)
+            redirect_to tweets_path, notice: "Scheduled tweet updated successfully"
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        if @tweet.destroy
+            redirect_to tweets_path, notice: "Tweet unscheduled successfully"
+        else
+            redirect_to request.referrer
+        end
     end
 
     private
