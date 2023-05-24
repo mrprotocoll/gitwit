@@ -1,0 +1,15 @@
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <p><%= tweet.body %></p>
+            <div class="d-flex align-items-center gap-2">
+                <%= image_tag(tweet.twitter_account.image, class: "account-img rounded-circle", alt: tweet.twitter_account.name) %>
+                <div>
+                    <h6 class="account-name"><%= tweet.twitter_account.name %></h6>
+                    <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}" %>
+                </div>
+            </div>
+        </div>
+        <%= button_to "Delete", tweet , method: :delete, class: "btn mt-0 m-3 btn-sm btn-danger btn-gradient" %>
+    </div>
+</div>
