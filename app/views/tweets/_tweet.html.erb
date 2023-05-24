@@ -10,6 +10,18 @@
                 </div>
             </div>
         </div>
-        <%= button_to "Delete", tweet , method: :delete, class: "btn mt-0 m-3 btn-sm btn-danger btn-gradient" %>
+        <div class="d-flex p-3 align-items-center justify-content-between">
+            <% if tweet.published? %>
+                <%= link_to "View tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}" , class: "btn btn-sm btn-info btn-gradient" %>
+            <% else %>
+                <p>Scheduled for: <%= l tweet.published_at, format: :short %></p>
+                <div>
+                <%= link_to "Edit", edit_tweet_path(tweet.id), class: "btn  btn-sm btn-outline-primary btn-gradient" %>
+                <%= link_to "Delete", tweet , method: :delete, class: "btn  btn-sm btn-outline-danger btn-gradient" %>
+                </div>
+            <% end %>
+            
+        </div>
     </div>
 </div>
+

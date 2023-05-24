@@ -1,0 +1,23 @@
+<div class="form">
+    <%= form_with model: tweet do |form| %>
+        <div class="mb-3">
+            <%= form.label :twitter_account %>
+            <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, {}, {class: "form-control"} %>
+            <%= link_to "Connect a Twitter Account", "/auth/twitter", method: :post, class: " mt-2 bg-gradient", data: {turbo: "false"} %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :body %>
+            <%= form.text_area :body, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :publish_at %>
+            <div class="form-control">
+                <%= form.datetime_select :published_at, class: "" %>
+            </div>
+        </div>
+
+        <%= form.submit "Schedule Tweet", class: "btn btn-primary bg-gradient" %>
+    <% end %>
+</div>
