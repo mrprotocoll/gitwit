@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between">
+    <h2>Tweets</h2>
+    <% if Current.user.twitter_accounts.any? %>
+        <%= link_to "Schedule a Tweet", new_tweet_path, class: "btn btn-primary rounded bg-gradient" %>
+    <% end %>
+</div>
+
+<% if Current.user.twitter_accounts.none? %>
+    <%= button_to "Connect a Twitter Account", "/auth/twitter", method: :post, class: "btn btn-primary rounded bg-gradient", data: {turbo: "false"} %>
+<% end %>
+
+<%= render @tweets %>

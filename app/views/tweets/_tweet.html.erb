@@ -1,0 +1,28 @@
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <p><%= tweet.body %></p>
+            <div class="d-flex align-items-center gap-2">
+                <%= image_tag(tweet.twitter_account.image, class: "account-img rounded-circle", alt: tweet.twitter_account.name) %>
+                <div>
+                    <h6 class="account-name"><%= tweet.twitter_account.name %></h6>
+                    <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}" %>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex p-3 align-items-center justify-content-between">
+            <% if tweet.published? %>
+                <%= link_to "View tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}" , class: "btn btn-sm btn-info btn-gradient" %>
+            <% else %>
+                <p>Scheduled for: <%= l tweet.published_at, format: :short %></p>
+                <div>
+                <%= link_to "Edit", edit_tweet_path(tweet.id), class: "btn  btn-sm btn-outline-primary btn-gradient" %>
+                <%= link_to "Delete", tweet ,  class: "btn  btn-sm btn-outline-danger btn-gradient", data: { turbo_method: :delete,
+                turbo_confirm: "Are you sure you want to delete this scheduled tweet?" } %>
+                </div>
+            <% end %>
+            
+        </div>
+    </div>
+</div>
+
