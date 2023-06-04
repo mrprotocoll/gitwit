@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :twitter_accounts
   resources :tweets
   resources :github
+  resources :github_accounts
   
   # Defines the root path route ("/")
   root "main#index"
