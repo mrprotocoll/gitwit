@@ -50,6 +50,7 @@ gem 'bootsnap', require: false
 
 # custom gems
 
+gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'omniauth-twitter'
 gem 'rack-cors'

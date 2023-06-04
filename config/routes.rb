@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "password_resets#update", as: :password_reset_update
 
   get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+  get "/auth/github/callback", to: "omniauth_callbacks#github"
 
   resources :twitter_accounts
   resources :tweets
