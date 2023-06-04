@@ -1,0 +1,2 @@
+class GithubAccountsController < ApplicationController
+end
