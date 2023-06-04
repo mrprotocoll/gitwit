@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-between">
+    <h2>Github Accounts</h2>
+    <%= button_to "Connect a Github Account", "/auth/github", method: :post, class: "btn btn-success rounded bg-gradient", data: {turbo: "false"} %>
+</div>
+
+<div class="accounts my-4 row">
+    <%= render partial: "shared/account_card", collection: @github_accounts, as: :account  %>
+</div>
